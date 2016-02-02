@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component,OnInit} from 'angular2/core';
 import {HeroDetailComponent} from './hero-detail.component';
 import {Hero} from './hero';
 import {HeroService} from './hero.service'
@@ -10,7 +10,7 @@ import {HeroService} from './hero.service'
     template:`
         <h1>{{title}}</h1>
         <ul class="heroes">
-            <li *ngFor="#hero of HEROES" [class.selected]="hero === selectedHero" on-click="onSelect(hero)">
+            <li *ngFor="#hero of heroes" [class.selected]="hero === selectedHero" on-click="onSelect(hero)">
                 <span class="badge">{{hero.id}}:</span>{{hero.name}}
             </li>
         </ul>
@@ -64,16 +64,23 @@ import {HeroService} from './hero.service'
             border-radius: 4px 0px 0px 4px;
         }
         `],
-        directives:[HeroDetailComponent]
+        directives:[HeroDetailComponent],
+        providers:[HeroService]
 })
 export class AppComponent {
     public title='Tour of Heroes';
     public heroes:Hero[];
     public selectedHero:Hero;
+    constructor(private _heroService: HeroService){ }
+    getHeroes(){
+        this._heroService.getHeroes().then(heroes => this.heroes = heroes)
+    }
+    ngOnInit(){
+        this.getHeroes();
+    }
     onSelect(hero:Hero){
-
         this.selectedHero=hero;
-        console.log(this.selectedHero)
+        //console.log(this.selectedHero)
     }
 
 }

@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<h2>My favorite hero is:{{myhero}}!</h2>
+<p>heroes:</p>
+<button (click)="changeShow()">{{btnText}}</button>
+<ul *ngIf="show">
+    <li *ngFor="#hero of heroes">{{hero.id}}:{{hero.name}}</li>
+</ul>

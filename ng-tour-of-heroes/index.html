@@ -2,7 +2,18 @@
 
 <head>
     <title>Angular 2 QuickStart</title>
-
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        .ng-valid[required]{
+            border-left:5px solid #42A948;
+        }
+        .ng-invalid{
+            border-left:5px solid #a94442;
+        }
+        .ng-pristine{
+            border-left:5px solid #cc00cc;
+        }
+    </style>
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>

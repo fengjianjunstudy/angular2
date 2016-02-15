@@ -7,8 +7,10 @@ import {bootstrap}    from 'angular2/platform/browser'
 //import {appComponent} from './4.userInput'
 //import {appComponent} from './4.userInput'
 //import {appComponent} from './6.userInput'
-import {HeroFormComponent} from './hero-form'
+/*import {HeroFormComponent} from './hero-form'*/
+import {HeroesComponent} from './DI/heroes.component'
 
 
-bootstrap(HeroFormComponent);
+
+bootstrap(HeroesComponent);
 //bootstrap(appComponent);

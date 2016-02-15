@@ -1,15 +1,15 @@
-System.register(['angular2/platform/browser', './hero-form'], function(exports_1) {
-    var browser_1, hero_form_1;
+System.register(['angular2/platform/browser', './DI/heroes.component'], function(exports_1) {
+    var browser_1, heroes_component_1;
     return {
         setters:[
             function (browser_1_1) {
                 browser_1 = browser_1_1;
             },
-            function (hero_form_1_1) {
-                hero_form_1 = hero_form_1_1;
+            function (heroes_component_1_1) {
+                heroes_component_1 = heroes_component_1_1;
             }],
         execute: function() {
-            browser_1.bootstrap(hero_form_1.HeroFormComponent);
+            browser_1.bootstrap(heroes_component_1.HeroesComponent);
         }
     }
 });
